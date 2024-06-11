@@ -29,7 +29,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Flow name</label>
                     <div class="col-sm-10">
-                        <input type="text" id="flow_name" class="form-control" name="flow_name" value="">
+                        <input type="text" id="flow_name" class="form-control" name="flow_name" value="{{$flow->flow_title}}">
                     </div>
                 </div>
             </div>
@@ -37,17 +37,17 @@
 
         <!-- Subform 2 -->
         <div class="subform" id="subform2">
-           
+            @foreach($prescriptions as $prescription)
             <h3>Prescription Type</h3>
             <div id="subform2-fields">   
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Prescription Type</label>
                     <div class="col-sm-10">
                         <select id="prescription_type" name="prescription_type" class="form-control">
-                            <option value="All" >Select</option>
-                            <option value="1" >Prescription</option>
-                            <option value="2" >Non-Prescription</option>
-                            <option value="3" >Reader</option>
+                            <option value="All" @if($prescription->prescription_type == 'All') selected @endif>Select</option>
+                            <option value="1" @if($prescription->prescription_type == 1) selected @endif>Prescription</option>
+                            <option value="2" @if($prescription->prescription_type == 2) selected @endif>Non-Prescription</option>
+                            <option value="3" @if($prescription->prescription_type == 3) selected @endif>Reader</option>
                         </select>
                     </div>
                 </div>
@@ -55,13 +55,13 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Display Title</label>
                     <div class="col-sm-10">
-                        <input type="text" id="prescription_display_title" value="" class="form-control" name="prescription_display_title">
+                        <input type="text" id="prescription_display_title" value="{{$prescription->display_title}}" class="form-control" name="prescription_display_title">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <input type="text" id="prescription_display_description" value="" class="form-control" name="prescription_display_description">
+                        <input type="text" id="prescription_display_description" value="{{$prescription->prescription_description}}" class="form-control" name="prescription_display_description">
                     </div>
                 </div>
                
@@ -69,12 +69,12 @@
             <div class="text-center">
                 <button type="button" class="btn btn-primary text-center" onclick="addPrescription()">Add Prescription Type</button>
             </div>
-        
+            @endforeach
     </form>  
   
             <div class="subform" id="subform3">
               
-               
+                @foreach($lensGroups as $lensGroup)
                 <form id="addlencegroupform">   
                     <input type="hidden" id="presciptionId" value="2">  
                     <h3>Lense Group</h3>
@@ -82,13 +82,13 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Display Title</label>
                             <div class="col-sm-10">
-                                <input type="text" id="lensgroup_title" value="" class="form-control" name="lensgroup_title">
+                                <input type="text" id="lensgroup_title" value="{{$lensGroup->display_title}}" class="form-control" name="lensgroup_title">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
-                                <input type="text" id="lensgroup_description" value="" class="form-control" name="lensgroup_description">
+                                <input type="text" id="lensgroup_description" value="{{$lensGroup->prescription_description}}" class="form-control" name="lensgroup_description">
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                         <button type="button" class="btn btn-primary" onclick="addLenseGroup()">Add Lens Group</button>
                     </div>
                 </form>
-              
+                @endforeach  
                 <div class="subform" id="subform3">
                     <h3>Lens Product Form</h3>
                     <form id="addlensproductform">

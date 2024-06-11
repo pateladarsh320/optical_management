@@ -22,13 +22,10 @@ use App\Http\Controllers\ClipController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/flow-page', [FlowController::class, 'index'])->name('flow-page');
 Route::get('/new-flow', [FlowController::class, 'addFlow'])->name('flow-add');
 Route::post('/add-presciption', [PrescriptionController::class, 'addPrescription'])->name('presciption.addprocess');
 Route::post('/add-presciptiongroup', [LenseGroupController::class, 'addlensGroup'])->name('lensgroup.addprocess');
 Route::post('/add-lenseProduct', [LensProductController::class, 'addlensproduct'])->name('lensproduct.addprocess');
 Route::post('/add-clip', [ClipController::class, 'addclip'])->name('clip.addprocess');
 Route::post('/add-lenseIndex', [LensProductController::class, 'addlensIndex'])->name('lensproductindex.addprocess');
-// Route::post('/profile-update', [AdminController::class, 'profileupdate'])->name('profile.update');
-// // Route::get('/township-page', [TownSettingController::class, 'indexPage'])->name('township-Page'); 
-// Route::get('/township-Page', [AdminController::class, 'indexPage'])->name('township-Page');
-// Route::post('/add-town', [AdminController::class, 'addTown'])->name('add-town');
