@@ -1,0 +1,51 @@
+:root {
+    --primary-color:#2576F0;
+    --text-secondary:#0D0D0D;
+    --white:#fff;
+    --black:#000;
+  }  
+
+body{padding:0;margin:0;font-family:"Poppins",sans-serif;background: #F5F8FA;color: var( --text-secondary);}
+ul{list-style:none}
+a{text-decoration:none;outline:none;}
+body a:hover,body a:focus{text-decoration:none;color:#1f2f63;}
+a:focus{outline:none;text-decoration:underline}
+textarea:focus{outline:none}
+input{outline:none!important}
+button,button:focus{outline:none}
+a img{border:none}
+img{border:0;max-width:100%;}
+p{padding:0;margin:0}
+h1,h2,h3,h4,ul,p{padding:0;margin:0}
+textarea{resize:none}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#555}
+input:-moz-placeholder,textarea:-moz-placeholder{color:#555}
+input::-moz-placeholder{opacity:1;outline:none}
+textarea::-moz-placeholder{opacity:1;outline:none}
+.clr{clear:both;height:0}
+.form-control:focus{-webkit-box-shadow:none;box-shadow:none}
+ul{padding:0;list-style:none}
+a{transition:.4s ease-in-out;}
+a:hover{text-decoration:none;transition:.4s ease-in-out;}
+p:empty{display:none;}
+em {
+  color: #ff0000;
+}
+
+/* common  */
+.page-wrapper{background: #F5F8FA;padding: 60px 60px 60px 30px; }
+.box{box-shadow: 0px 28px 40px -20px #12003814;background: #FFFFFF;padding: 30px;}
+.carddetail { max-width: 100%; margin: auto; }
+.card_view { display: flex; align-items: center; flex-wrap: wrap; justify-content: center;}
+.card_view .icon { width: 60px; height: 60px;  display: flex; align-items: center;justify-content: center; border-radius: 11.11px; }
+.purple{background: rgba(139, 58, 202, 0.1);}
+.green_light{background: rgba(57, 193, 202, 0.1);}
+.yellow_light{background: rgba(207, 210, 64, 0.1);}
+.card_view .decr { padding-left: 16px; }
+.card_view h3{ font-size: 15px; font-weight: 500; line-height: 22.5px; text-align: left;color: #545666;}
+.card_view .data{ font-size: 40px; font-weight: 600; line-height: 55px; letter-spacing: -0.03em; text-align: left;}
+.carddetail .col-md-4 ~ .col-md-4 { border-left: 1px solid rgba(0, 0, 0, 0.1); }
+
+
+
+
