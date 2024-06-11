@@ -16,7 +16,7 @@ class FlowController extends Controller
         $flow= Flow::where('id', '3')->first();
         $prescription= Prescription::where('flow_id', '3')->get();
         $lensGroup= LensGroup::where('prescription_id', '2')->get();
-        return view('flow.addflow',['flow'=>$flow, 'prescriptions'=>$prescription, 'lensGroups'=>$lensGroup]);
+        return view('flow.index',['flow'=>$flow, 'prescriptions'=>$prescription, 'lensGroups'=>$lensGroup]);
     }
 
       //     $Resident= Resident::where('id', $id)->first();
