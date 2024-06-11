@@ -22,6 +22,7 @@ use App\Http\Controllers\ClipController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', [FlowController::class, 'dashboard'])->name('dashboard');
 Route::get('/flow-page', [FlowController::class, 'index'])->name('flow-page');
 Route::get('/new-flow', [FlowController::class, 'addFlow'])->name('flow-add');
 Route::post('/add-presciption', [PrescriptionController::class, 'addPrescription'])->name('presciption.addprocess');
