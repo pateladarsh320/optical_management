@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('lensproduct_id')->nullable();
             $table->foreign('lensproduct_id')->references('id')->on('lens_product_table');
             $table->string('index_price')->nullable();
-            $table->string('index_type')->nullable();
+            $table->string('index_type')->default('1')->comment('1-basic,2-standard,3-advance');
             $table->string('index_name')->nullable();
             $table->tinyInteger('recommded')->default('1')->comment('1-recommded,2-not-recommded');
             $table->longText('description')->nullable();

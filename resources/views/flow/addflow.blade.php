@@ -76,7 +76,7 @@
               
                
                 <form id="addlencegroupform">   
-                    <input type="hidden" id="presciptionId" value="2">  
+                    <input type="hidden" id="presciptionIdLensGroup" value="1">  
                     <h3>Lense Group</h3>
                     <div id="subform3-fields">
                         <div class="form-group row">
@@ -102,7 +102,7 @@
                     <form id="addlensproductform">
                         <div id="subform3-fields">
                         
-                            <input type="hidden" id="groupId" value="2">
+                            <input type="hidden" id="lensgroupId" value="1">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Display Title</label>
                                 <div class="col-sm-10">
@@ -120,12 +120,12 @@
                             <button type="button" class="btn btn-primary" onclick="addLenseProduct()">Add Lens Product</button>
                         </div>
                     </form>
-                    <!--add Index -->
+                    <!--lens Index form -->
                     <div class="subform" id="subform3">
                         <h3>Lens Index</h3>
                         <form id="addlensproductIndexform">
                             <div id="subform3-fields">
-                                <input type="hidden" id="lensproductId" value="3">
+                                <input type="hidden" id="lensproductId" value="1">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Index Prize</label>
                                     <div class="col-sm-10">
@@ -135,16 +135,15 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Recomnded</label>
                                     <div class="col-sm-10">
-                                        <input type="checkbox" id="product_recomnded" class="form-control" name="product_recomnded">
+                                        <input type="checkbox" id="product_recomnded" class="form-control" name="product_recomnded" value="2" onclick="updateCheckboxValue()">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Index Type</label>
                                     <select id="product_indextype" name="product_indextype" class="form-control">
                                         <option value="All">Select</option>
-                                        <option value="1" >Prescription</option>
-                                        <option value="2">Non-Prescription</option>
-                                        <option value="3">Reader</option>
+                                        <option value="1" >Basic</option>
+                                        <option value="2">Premium</option>
                                     </select>
                                 </div>
                                 <div class="form-group row">
@@ -164,153 +163,185 @@
                                 <button type="button" class="btn btn-primary" onclick="addLenseIndex()">Add Lens Index</button>
                             </div>
                         </form>
-                    <!--add reflecting coat -->
-                    <div class="subform" id="subform3">
-                        <h3>Anti Reflecting Coat</h3>
-                        <form id="addlensproductIndexform">
-                            <div id="subform3-fields">
-                                <input type="hidden" id="lensproductId" value="3">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Prize</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="reflectindex_prize" class="form-control" name="index_prize">
+                        <!--anti reflecting coat -->
+                        <div class="subform" id="subform3">
+                            <h3>Anti Reflecting Coat</h3>
+                            <form id="addlensreflectform">
+                                <div id="subform3-fields">
+                                    <input type="hidden" id="lensindex_id" value="1">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Select Type</label>
+                                        <div class="col-sm-10">
+                                            <input type="radio" id="antireflectingcoat" name="coating" value="1">
+                                            <label for="anti-reflecting-coat">Anti-Reflecting Coat</label><br>
+                                            
+                                            <input type="radio" id="tint" name="coating" value="2">
+                                            <label for="tint">Tint</label><br>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Price</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" id="reflectindex_price" class="form-control" name="reflectindex_price">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Recomnded</label>
+                                        <div class="col-sm-10">
+                                            <input type="checkbox" id="reflect_recomnded" class="form-control" name="reflect_recomnded" value="2" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">AR Coating Type</label>
+                                        <select id="reflectCoting_type" name="reflectCoting_type" class="form-control" name="reflectCoting_type">
+                                            <option value="All">Select</option>
+                                            <option value="1">Standard</option>
+                                            <option value="2">Advanced</option>
+                                            <option value="3">Premium</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">AR Coating Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" id="reflectCoating_Name" class="form-control" name="reflectCoating_Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Description</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" id="reflect_description" class="form-control" name="reflect_description">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Recomnded</label>
-                                    <div class="col-sm-10">
-                                        <input type="checkbox" id="reflect_recomnded" class="form-control" name="product_recomnded">
-                                    </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary" onclick="addLensReflect()">Add Reflect</button>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">AR Coating Type</label>
-                                    <select id="product_indextype" name="reflectCoting_type" class="form-control" name="reflectCoting_type">
-                                        <option value="All">Select</option>
-                                        <option value="1" >Prescription</option>
-                                        <option value="2">Non-Prescription</option>
-                                        <option value="3">Reader</option>
-                                    </select>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">AR Coating Name</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="reflectCoating_Name" class="form-control" name="reflectCoating_Name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Description</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="reflect_description" class="form-control" name="reflect_description">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="button" class="btn btn-primary" onclick="addLenseIndex()">Add Lens Index</button>
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
     
-            <!-- Subform 4 -->
+            <!-- clip form -->
             <div class="subform" id="subform4">
                 <h3>Add Clip Ons</h3>
-                <div id="subform4-fields">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Field 1</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="subform4[]">
+                <form id="addclipform">
+                    <div id="subform3-fields">
+                        <input type="hidden" id="lensproductId" value="3">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip-On-Price</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_price" class="form-control" name="clip_price">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip on Quantity</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_quantity" class="form-control" name="clip_quantity">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip-on Type</label>
+                            <select id="product_indextype" name="clip_type" class="form-control" name="clip_type">
+                                <option value="All">Select</option>
+                                <option value="1" >Prescription</option>
+                                <option value="2">Non-Prescription</option>
+                                <option value="3">Reader</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip on Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_Name" class="form-control" name="clip_Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Add Image</label>
+                            <div class="col-sm-10">
+                                <input type="file" id="clip_image" class="form-control" name="clip_image">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="addField('subform4')">Add Field</button>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" onclick="addClipOns()">Add Clip Ons</button>
+                    </div>
+                </form>
             </div>
-            <!-- Subform 3 -->
+            <!-- Engraving form-->
             <div class="subform" id="subform3">
                 <h3>Add Engraving</h3>
+                <form id="addEngraving">
                 <div id="subform3-fields">
+                    <input type="hidden" id="presciptionIdEngraving" value="1">
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Display Title</label>
+                        <label class="col-sm-2 col-form-label">Personalize Your frames</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="subform3[]">
+                            <input type="text" id="engraving_frame" class="form-control" name="engraving_frame">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Description</label>
+                        <label class="col-sm-2 col-form-label">Price</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="subform3[]">
+                            <input type="text" id="engravingprice" class="form-control" name="engravingprice">
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="addField('subform3')">Add Field</button>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="addLenseEngraving()">Add Engraving</button>
+                </div>
+                </form>
             </div>
 
-            <!-- Subform 4 -->
+            <!-- Frams form -->
             <div class="subform" id="subform4">
                 <h3>Add Frames</h3>
-                <div id="subform4-fields">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Field 1</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="subform4[]">
+                <form id="addclipform">
+                    <div id="subform3-fields">
+                        <input type="hidden" id="lensproductId" value="3">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip-On-Price</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_price1" class="form-control" name="clip_price1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip on Quantity</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_quantity1" class="form-control" name="clip_quantity1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip-on Type</label>
+                            <select id="product_indextype" name="clip_type1" class="form-control" name="clip_type1">
+                                <option value="All">Select</option>
+                                <option value="1" >Prescription</option>
+                                <option value="2">Non-Prescription</option>
+                                <option value="3">Reader</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Clip on Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="clip_Name11" class="form-control" name="clip_Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Add Image</label>
+                            <div class="col-sm-10">
+                                <input type="file" id="clip_image1" class="form-control" name="clip_image1">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="addField('subform4')">Add Field</button>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" onclick="addClipOns()">Add Clip Ons</button>
+                    </div>
+                </form>
             </div>
         </div>
-
-    {{-- <!-- Subform 3 -->
-    <div class="subform" id="subform3">
-        <h3>Subform 3</h3>
-        <div id="subform3-fields">
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Display Title</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="subform3[]">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Description</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="subform3[]">
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="addField('subform3')">Add Field</button>
-    </div>
-
-    <!-- Subform 4 -->
-    <div class="subform" id="subform4">
-        <h3>Subform 4</h3>
-        <div id="subform4-fields">
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Field 1</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="subform4[]">
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="addField('subform4')">Add Field</button>
-    </div>
-
-    <!-- Subform 5 -->
-    <div class="subform" id="subform5">
-        <h3>Subform 5</h3>
-        <div id="subform5-fields">
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Field 1</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="subform5[]">
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="addField('subform5')">Add Field</button>
-    </div> --}}
 </div>
 
-<!-- Bootstrap and jQuery JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -351,7 +382,7 @@ function addPrescription() {
 
 function addLenseGroup() {
     var formData = $('#addlencegroupform').serializeArray();
-    var presciptionId = $('#presciptionId').val();
+    var presciptionId = $('#presciptionIdLensGroup').val();
     var data = {};
 
     $.each(formData, function() {
@@ -374,8 +405,9 @@ function addLenseGroup() {
         url: '{{ route('lensgroup.addprocess') }}',
         data: data,
         success: function(response) {
-            var flowTitle = response.newflow.flow_title;
             alert("Added new LensGroup");
+            // var flowTitle = response.newflow.flow_title;
+          
         },
         error: function(error) {
             console.error('Error submitting form:', error);
@@ -385,7 +417,7 @@ function addLenseGroup() {
 
 function addLenseProduct() {
     var formData = $('#addlensproductform').serializeArray();
-    var groupId = $('#groupId').val();
+    var lensgroupId = $('#lensgroupId').val();
     var data = {};
 
     $.each(formData, function() {
@@ -400,7 +432,7 @@ function addLenseProduct() {
     });
     var csrf = $('meta[name="csrf-token"]').attr('content');
 
-    data.groupId  = groupId;
+    data.lensgroupId  = lensgroupId;
     data._token  = csrf;
 
     $.ajax({
@@ -408,8 +440,7 @@ function addLenseProduct() {
         url: '{{ route('lensproduct.addprocess') }}',
         data: data,
         success: function(response) {
-            var flowTitle = response.newflow.flow_title;
-            alert("Added new LensGroup");
+            alert("Added new Lens Product");
         },
         error: function(error) {
             console.error('Error submitting form:', error);
@@ -437,13 +468,19 @@ function addLenseIndex() {
     data.lensproductId  = lensproductId;
     data._token  = csrf;
 
+    var product_recomnded = document.getElementById('product_recomnded');
+    if (product_recomnded.checked) {
+        data.product_recomnded = '1';
+    } else {
+        data.product_recomnded = '2';
+    }
+
     $.ajax({
         type: 'post',
         url: '{{ route('lensproductindex.addprocess') }}',
         data: data,
         success: function(response) {
-            var flowTitle = response.newflow.flow_title;
-            alert("Added new LensGroup");
+            alert("Added new Lens Index");
         },
         error: function(error) {
             console.error('Error submitting form:', error);
@@ -451,11 +488,79 @@ function addLenseIndex() {
     });
 }
 
-// // Attach the addPrescription function to the form's submit event
-// $('#addprescriptionform').on('submit', function(event) {
-//     event.preventDefault(); // Prevent default form submission
-//     addPrescription(); // Call the addPrescription function
-// });
+function addLensReflect() {
+    var formData = $('#addlensreflectform').serializeArray();
+    var lensindex_id  = $('#lensindex_id').val();
+    var data = {};
+
+    $.each(formData, function() {
+        if (data[this.name]) {
+            if (!Array.isArray(data[this.name])) {
+                data[this.name] = [data[this.name]];
+            }
+            data[this.name].push(this.value);
+        } else {
+            data[this.name] = this.value;
+        }
+    });
+    var csrf = $('meta[name="csrf-token"]').attr('content');
+
+    data.lensindex_id   = lensindex_id ;
+    data._token  = csrf;
+
+    var reflect_recomnded = document.getElementById('reflect_recomnded');
+    if (reflect_recomnded.checked) {
+        data.reflect_recomnded = '1';
+    } else {
+        data.reflect_recomnded = '2';
+    }
+
+    $.ajax({
+        type: 'post',
+        url: '{{ route('reflect.addprocess') }}',
+        data: data,
+        success: function(response) {
+            alert("Added new Lens Reflect Index");
+        },
+        error: function(error) {
+            console.error('Error submitting form:', error);
+        }
+    });
+}
+
+function addLenseEngraving() {
+    var formData = $('#addEngraving').serializeArray();
+    var presciptionIdEngraving  = $('#presciptionIdEngraving').val();
+    var data = {};
+
+    $.each(formData, function() {
+        if (data[this.name]) {
+            if (!Array.isArray(data[this.name])) {
+                data[this.name] = [data[this.name]];
+            }
+            data[this.name].push(this.value);
+        } else {
+            data[this.name] = this.value;
+        }
+    });
+    var csrf = $('meta[name="csrf-token"]').attr('content');
+
+    data.presciptionIdEngraving   = presciptionIdEngraving ;
+    data._token  = csrf;
+
+    $.ajax({
+        type: 'post',
+        url: '{{ route('engraving.addprocess') }}',
+        data: data,
+        success: function(response) {
+            alert("Added new Lens Engraving");
+        },
+        error: function(error) {
+            console.error('Error submitting form:', error);
+        }
+    });
+}
+
 
  
 </script>

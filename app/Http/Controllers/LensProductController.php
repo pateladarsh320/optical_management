@@ -13,7 +13,7 @@ class LensProductController extends Controller
 {
     public function addlensproduct(Request $request) {
         $newLensProduct = new LensProduct();
-        $newLensProduct->lensgroup_id  = $request->groupId; 
+        $newLensProduct->lensgroup_id  = $request->lensgroupId; 
         $newLensProduct->display_title = $request->lensproduct_title; 
         $newLensProduct->description = $request->lensproduct_description;
         $newLensProduct->save();

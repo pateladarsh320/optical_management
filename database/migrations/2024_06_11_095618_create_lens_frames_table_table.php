@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lens_reflect_table', function (Blueprint $table) {
+        Schema::create('lens_frames_table', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('lensindex_id')->nullable();
             $table->foreign('lensindex_id')->references('id')->on('lens_index_table');
             $table->tinyInteger('lensindexType')->default('1')->comment('1-anti-reflecting-coat,2-tint');
             $table->string('price')->nullable();
             $table->tinyInteger('recommded')->default('1')->comment('1-recommded,2-not-recommded');
-            $table->tinyInteger('coating_type')->default('1')->comment('1-standard,2-advance,3-premium');
+            $table->tinyInteger('coating_type')->default('1')->comment('1-Standard,2-Advance,3-Premium');
             $table->string('coating_name')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lens_reflect_table');
+        Schema::dropIfExists('lens_frames_table');
     }
 };

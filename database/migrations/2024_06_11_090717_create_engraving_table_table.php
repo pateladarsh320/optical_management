@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clip_table', function (Blueprint $table) {
+        Schema::create('engraving_table', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('prescription_id')->nullable();
             $table->foreign('prescription_id')->references('id')->on('prescriptions_table');
-            $table->string('clip_on_prize')->nullable();
-            $table->string('clip_on_quantity')->nullable();
-            $table->string('clip_on_name')->nullable();
-            $table->string('clip_on_type')->default('1')->comment('1-Standard,2-Advance,3-Premium');
-            $table->string('image')->nullable();
+            $table->tinyInteger('personalize_frame')->default('1')->comment('1-basic,2-standard,3-advance');
+            $table->string('price')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clip_table');
+        Schema::dropIfExists('engraving_table');
     }
 };

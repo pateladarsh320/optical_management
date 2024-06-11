@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LensIndex extends Model
+class LensFrames extends Model
 {
     use HasFactory;
-    protected $table = 'lens_index_table';
+    protected $table = 'lens_frames_table';
 }
