@@ -11,6 +11,12 @@ use App\Models\Clip;
 
 class FlowController extends Controller
 {
+<<<<<<< HEAD
+=======
+    public function dashboard(Request $request){
+      return view('dashboard.index');
+    }
+>>>>>>> ccccc77b92da5d1f4d053cc7af651a9658bc914c
     public function index(Request $request){
       $flow= Flow::get();
       return view('flow.index',['flow'=>$flow]);
