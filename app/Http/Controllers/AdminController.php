@@ -19,5 +19,5 @@ class AdminController extends Controller
         //     return view('superadmin::resident.resident_details',['Resident'=>$Resident, 'Documents'=>$Documents]);
         // }
 
-    
+     
 }

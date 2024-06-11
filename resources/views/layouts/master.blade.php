@@ -27,7 +27,7 @@
     <script src="{{ asset('/assets/js/bootstrap.bundle.min.js?' . time()) }}"></script>
     @stack('head-style')
 </head>
-<body>
+<body> 
 
     <div class="page-wrapper">
        @yield('content')
