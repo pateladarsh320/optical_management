@@ -2,7 +2,7 @@
     --primary-color:#2576F0;
     --text-secondary:#0D0D0D;
     --white:#fff;
-    --black:#000;
+    --black:#000; 
   }  
 
 body{padding:0;margin:0;font-family:"Poppins",sans-serif;background: #F5F8FA;color: var( --text-secondary);}

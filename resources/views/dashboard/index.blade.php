@@ -41,7 +41,7 @@
                         <div class="data">40</div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>

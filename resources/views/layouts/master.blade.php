@@ -89,7 +89,6 @@
     </div>
 
     @stack('footer-script')
->>>>>>> ccccc77b92da5d1f4d053cc7af651a9658bc914c
 
 </body>
 
