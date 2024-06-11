@@ -33,7 +33,7 @@
        @yield('content')
     </div>
 
-    @stack('footer-script')
+    @stack('footer-script') 
 
 </body>
 
