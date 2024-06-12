@@ -39,5 +39,6 @@ Route::post('/add-lenseIndex', [LensIndexController::class, 'addlensIndex'])->na
 
 Route::post('/add-reflect', [productReflectingController::class, 'addLensReflect'])->name('reflect.addprocess');
 Route::post('/add-engraving', [EngravingController::class, 'addEngraving'])->name('engraving.addprocess');
+Route::post('/add-engraving', [lensFrameController::class, 'addLensFrame'])->name('frame.addprocess');
 
 Route::post('/add-clip', [ClipController::class, 'addclip'])->name('clip.addprocess');

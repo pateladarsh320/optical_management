@@ -14,7 +14,7 @@ class lensFrameController extends Controller
 {
     public function addLensFrame(Request $request) {
         $newLensFrame = new LensFrames();
-        $newLensFrame->prescription_id = $request->lensproductId; 
+        $newLensFrame->prescription_id = $request->lensproductframeId; 
         $newLensFrame->clip_on_prize = $request->clip_price1;
         $newLensFrame->clip_on_quantity = $request->clip_quantity1; 
         $newLensFrame->clip_on_type = $request->clip_type1; 

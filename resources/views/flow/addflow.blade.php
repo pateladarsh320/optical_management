@@ -297,9 +297,9 @@
             <!-- Frams form -->
             <div class="subform" id="subform4">
                 <h3>Add Frames</h3>
-                <form id="addclipform">
+                <form id="addframform">
                     <div id="subform3-fields">
-                        <input type="hidden" id="lensproductId" value="3">
+                        <input type="hidden" id="lensproductframeId" value="3">
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Clip-On-Price</label>
                             <div class="col-sm-10">
@@ -335,7 +335,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn btn-primary" onclick="addClipOns()">Add Clip Ons</button>
+                        <button type="button" class="btn btn-primary" onclick="addLenseFrame()">Add Clip Ons</button>
                     </div>
                 </form>
             </div>
@@ -551,6 +551,39 @@ function addLenseEngraving() {
     $.ajax({
         type: 'post',
         url: '{{ route('engraving.addprocess') }}',
+        data: data,
+        success: function(response) {
+            alert("Added new Lens Engraving");
+        },
+        error: function(error) {
+            console.error('Error submitting form:', error);
+        }
+    });
+}
+
+function addLenseFrame() {
+    var formData = $('#addframform').serializeArray();
+    var lensproductframeId  = $('#lensproductframeId').val();
+    var data = {};
+
+    $.each(formData, function() {
+        if (data[this.name]) {
+            if (!Array.isArray(data[this.name])) {
+                data[this.name] = [data[this.name]];
+            }
+            data[this.name].push(this.value);
+        } else {
+            data[this.name] = this.value;
+        }
+    });
+    var csrf = $('meta[name="csrf-token"]').attr('content');
+
+    data.lensproductframeId   = lensproductframeId ;
+    data._token  = csrf;
+
+    $.ajax({
+        type: 'post',
+        url: '{{ route('frame.addprocess') }}',
         data: data,
         success: function(response) {
             alert("Added new Lens Engraving");
