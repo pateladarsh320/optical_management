@@ -31,6 +31,7 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', [FlowController::class, 'dashboard'])->name('dashboard');
 Route::get('/flow-page', [FlowController::class, 'index'])->name('flow-page');
+Route::get('/addnew-flow', [FlowController::class, 'addNewFlow'])->name('newflow-add');
 Route::get('/new-flow', [FlowController::class, 'addFlow'])->name('flow-add');
 Route::post('/add-presciption', [PrescriptionController::class, 'addPrescription'])->name('presciption.addprocess');
 Route::post('/add-presciptiongroup', [LenseGroupController::class, 'addlensGroup'])->name('lensgroup.addprocess');
@@ -39,6 +40,7 @@ Route::post('/add-lenseIndex', [LensIndexController::class, 'addlensIndex'])->na
 
 Route::post('/add-reflect', [productReflectingController::class, 'addLensReflect'])->name('reflect.addprocess');
 Route::post('/add-engraving', [EngravingController::class, 'addEngraving'])->name('engraving.addprocess');
-Route::post('/add-engraving', [lensFrameController::class, 'addLensFrame'])->name('frame.addprocess');
+Route::post('/add-frame', [lensFrameController::class, 'addLensFrame'])->name('frame.addprocess');
+Route::post('/add-clip', [ClipController::class, 'addLensClip'])->name('clip.addprocess');
 
-Route::post('/add-clip', [ClipController::class, 'addclip'])->name('clip.addprocess');
+// Route::post('/add-clip', [ClipController::class, 'addclip'])->name('clip.addprocess');

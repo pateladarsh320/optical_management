@@ -19,11 +19,20 @@ class lensFrameController extends Controller
         $newLensFrame->clip_on_quantity = $request->clip_quantity1; 
         $newLensFrame->clip_on_type = $request->clip_type1; 
         $newLensFrame->clip_on_name = $request->clip_Name1;
-        $newLensFrame->image = $request->clip_image1;
+        if ($request->hasFile('clip_image1')) {
+            $image = $request->file('clip_image1');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $folderPath = public_path('lensFrame');
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0777, true);
+            }      
+            $image->move($folderPath, $imageName);
+            $newLensFrame->image = $imageName; 
+        }
         $newLensFrame->save();
     
         return response()->json([
-            'message' => 'Clip added successfully',
+            'message' => 'Lens Frame added successfully',
             'success' => true,
             'newLensFrame'=>$newLensFrame
         ]);

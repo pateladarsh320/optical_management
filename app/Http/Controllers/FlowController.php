@@ -27,5 +27,13 @@ class FlowController extends Controller
         return view('flow.addflow',['flow'=>$flow, 'prescriptions'=>$prescription, 'lensGroups'=>$lensGroup]);
     }
 
+    public function addNewFlow(Request $request){
+        
+      $flow= Flow::where('id', '3')->first();
+      $prescription= Prescription::where('flow_id', '3')->get();
+      $lensGroup= LensGroup::where('prescription_id', '2')->get();
+      return view('flow.add_new_flow',['flow'=>$flow, 'prescriptions'=>$prescription, 'lensGroups'=>$lensGroup]);
+  }
+
      
 }

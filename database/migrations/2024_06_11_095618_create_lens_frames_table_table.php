@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('lens_frames_table', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lensindex_id')->nullable();
-            $table->foreign('lensindex_id')->references('id')->on('lens_index_table');
-            $table->tinyInteger('lensindexType')->default('1')->comment('1-anti-reflecting-coat,2-tint');
-            $table->string('price')->nullable();
-            $table->tinyInteger('recommded')->default('1')->comment('1-recommded,2-not-recommded');
-            $table->tinyInteger('coating_type')->default('1')->comment('1-Standard,2-Advance,3-Premium');
-            $table->string('coating_name')->nullable();
-            $table->longText('description')->nullable();
+            $table->unsignedBigInteger('prescription_id')->nullable();
+            $table->foreign('prescription_id')->references('id')->on('prescriptions_table');
+            $table->string('clip_on_prize')->nullable();
+            $table->string('clip_on_quantity')->nullable();
+            $table->string('clip_on_name')->nullable();
+            $table->string('clip_on_type')->default('1')->comment('1-Standard,2-Advance,3-Premium');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
