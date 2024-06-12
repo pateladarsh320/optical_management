@@ -1,5 +1,6 @@
 :root {
     --primary-color:#2576F0;
+    --primary-color-hover:#1e63cb;
     --text-secondary:#0D0D0D;
     --white:#fff;
     --black:#000; 
@@ -34,7 +35,7 @@ em {
 
 /* common  */
 .page-wrapper{background: #F5F8FA;padding: 60px 60px 60px 30px; }
-.box{box-shadow: 0px 28px 40px -20px #12003814;background: #FFFFFF;padding: 30px;}
+.box{box-shadow: 0px 28px 40px -20px #12003814;background: #FFFFFF;padding: 30px;border-radius: 10px}
 .box ~ .box{margin-top: 30px;}
 .carddetail { max-width: 100%; margin: auto; }
 .card_view { display: flex; align-items: center; flex-wrap: wrap; justify-content: center;}
@@ -47,6 +48,21 @@ em {
 .card_view .data{ font-size: 40px; font-weight: 600; line-height: 55px; letter-spacing: -0.03em; text-align: left;}
 .carddetail .col-md-4 ~ .col-md-4 { border-left: 1px solid rgba(0, 0, 0, 0.1); }
 
+.heading_box { font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left; color: #666666; margin: 0 0 13px; }
+/* table css */
+.table thead tr{background: #F1EFF9;}
+.table thead tr th{font-family: Poppins; font-size: 15px; font-weight: 500; line-height: 22.5px; letter-spacing: -0.03em; text-align: left;color: #666666;border: none;padding: 12px 10px;}
+.table tbody tr td{font-family: Poppins; font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.03em; text-align: left;color: #404040;border: none;border-bottom: 1px solid rgba(0, 0, 0, 0.1);padding: 20px 10px;}
 
+.table thead tr th:first-child, .table tbody tr td:first-child{padding-left: 20px;}
+.table thead tr th:last-child, .table tbody tr td:last-child{padding-right: 20px;}
+.table tbody tr:last-child td{border-bottom: none;padding-bottom: 0;}
+/* end  */
+.primary_btn{background: var(--primary-color);color: var(--white);font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;padding:8px 19px ;border-radius: 6px;}
+.primary_btn svg{margin-right: 3px;}
+.primary_btn:hover{background: var(--primary-color-hover);color: var(--white);outline: none;}
+.secondary_btn { background: rgba(37, 118, 240, 0.1);display: inline-block;border-radius: 4px;font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: var(--primary-color); padding: 5px 11px; }
 
+.header_heading{margin: 0 0 25px;}
+.header_heading h1{font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; text-align: left;color: #262839;margin: 0;}
 

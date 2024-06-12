@@ -46,5 +46,75 @@
     </div>
 </div>
 
-<div class="box"></div>
+<div class="box">
+    <div class="heading_box">
+        Latest Order
+    </div>
+    <div class="table-responsive">
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th>Product </th>
+                    <th>Type</th>
+                    <th>Lens</th>
+                    <th>Add-ons</th>
+                    <th>Amount</th>
+                    <th width="10%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The Kriby - 55452</td>
+                    <td>Reader</td>
+                    <td>Clear | Blokz</td>
+                    <td>Gradient Green</td>
+                    <td>$42.85</td>
+                    <td>
+                        <a href="#" class="secondary_btn">View Details </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Kriby - 55452</td>
+                    <td>Reader</td>
+                    <td>Clear | Blokz</td>
+                    <td>Gradient Green</td>
+                    <td>$42.85</td>
+                    <td>
+                        <a href="#" class="secondary_btn">View Details </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Kriby - 55452</td>
+                    <td>Reader</td>
+                    <td>Clear | Blokz</td>
+                    <td>Gradient Green</td>
+                    <td>$42.85</td>
+                    <td>
+                        <a href="#" class="secondary_btn">View Details </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Kriby - 55452</td>
+                    <td>Reader</td>
+                    <td>Clear | Blokz</td>
+                    <td>Gradient Green</td>
+                    <td>$42.85</td>
+                    <td>
+                        <a href="#" class="secondary_btn">View Details </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Kriby - 55452</td>
+                    <td>Reader</td>
+                    <td>Clear | Blokz</td>
+                    <td>Gradient Green</td>
+                    <td>$42.85</td>
+                    <td>
+                        <a href="#" class="secondary_btn">View Details </a>
+                    </td>
+                </tr>
+            </tbody> 
+        </table>
+    </div>
+</div>
 @endsection
