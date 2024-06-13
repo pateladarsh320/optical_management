@@ -10,22 +10,49 @@
     </div>
 </div>
 <div class="box flow-box">
-    <h4>Flow Title</h4>
-    <p>This title is for internal use and is not visible to customers</p>
-    <div class="form-group mb-0">
-         <input type="text" class="form-control" />
-    </div>       
+    <div class="body_box"><h4>Flow Title</h4>
+        <p>This title is for internal use and is not visible to customers</p>
+        <div class="form-group mb-0">
+            <input type="text" class="form-control" />
+        </div> 
+    </div>      
 </div>
 <div class="box prescription-box">
-     <div class="header_prescription">
+     <div class="header_prescription d-flex align-items-center justify-content-between">
         <h4>Prescription Types</h4> 
-        <a href="#" class="primary_btn">Add New</a>
+        <a href="#" class="primary_btn"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.49989 1.5V10.5M1 6.00006H10" stroke="white" stroke-width="1.92857" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> Add New</a>
      </div>
     <div class="body_box">
         <div class="no_added">
             <p>You have not added any prescription Yet</p>
         </div> 
     </div>       
+</div>
+<div class="box assign-product-box opcity-50">
+    <div class="header_prescription d-flex align-items-center justify-content-between">
+       <h4>Assign Product</h4>  
+    </div>
+   <div class="body_box">
+        
+   </div>       
+</div>
+{{-- popup sidebar  --}}
+<div class="siderbar_popup">
+    <div class="sidebar_header">
+         <h3>Add Prescription Type</h3>
+         <a href="javascript:void();" class="close_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6L18 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> 
+        </a>
+    </div>
+    <div class="sidebar_body">
+        <form>
+            
+        </form>
+    </div>
 </div>
 @endsection
 
