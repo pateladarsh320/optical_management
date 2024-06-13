@@ -14,6 +14,12 @@
             padding: 20px;
             margin: 10px 0;
         }
+        
+        .error {
+            color: red;
+        }
+   
+
     </style>
 </head>
 <body>
@@ -74,7 +80,6 @@
   
             <div class="subform" id="subform3">
               
-               
                 <form id="addlencegroupform">   
                     <input type="hidden" id="presciptionIdLensGroup" value="1">  
                     <h3>Lense Group</h3>
@@ -270,7 +275,7 @@
                 </form>
             </div>
             <!-- Engraving form-->
-            <div class="subform" id="subform3">
+            {{-- <div class="subform" id="subform3">
                 <h3>Add Engraving</h3>
                 <form id="addEngraving">
                 <div id="subform3-fields">
@@ -292,7 +297,34 @@
                     <button type="button" class="btn btn-primary" onclick="addLenseEngraving()">Add Engraving</button>
                 </div>
                 </form>
+            </div> --}}
+
+            <div class="subform" id="subform3">
+                <h3>Add Engraving</h3>
+                <form id="addEngraving">
+                    <div id="subform3-fields">
+                        <input type="hidden" id="presciptionIdEngraving" value="1">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Personalize Your frames</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="engraving_frame" class="form-control" name="engraving_frame">
+                                <span class="error" id="engraving_frameError"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Price</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="engravingprice" class="form-control" name="engravingprice">
+                                <span class="error" id="engravingpriceError"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" onclick="addLenseEngraving()">Add Engraving</button>
+                    </div>
+                </form>
             </div>
+            
 
             <!-- Frams form -->
             <div class="subform" id="subform4">
@@ -528,10 +560,58 @@ function addLensReflect() {
     });
 }
 
+// function addLenseEngraving() {
+//     var formData = $('#addEngraving').serializeArray();
+//     var presciptionIdEngraving  = $('#presciptionIdEngraving').val();
+//     var data = {};
+
+//     $.each(formData, function() {
+//         if (data[this.name]) {
+//             if (!Array.isArray(data[this.name])) {
+//                 data[this.name] = [data[this.name]];
+//             }
+//             data[this.name].push(this.value);
+//         } else {
+//             data[this.name] = this.value;
+//         }
+//     });
+//     var csrf = $('meta[name="csrf-token"]').attr('content');
+
+//     data.presciptionIdEngraving   = presciptionIdEngraving ;
+//     data._token  = csrf;
+
+//     $.ajax({
+//         type: 'post',
+//         url: '{{ route('engraving.addprocess') }}',
+//         data: data,
+//         success: function(response) {
+//             alert("Added new Lens Engraving");
+//         },
+//         error: function(error) {
+//             console.error('Error submitting form:', error);
+//         }
+//     });
+// }
 function addLenseEngraving() {
     var formData = $('#addEngraving').serializeArray();
-    var presciptionIdEngraving  = $('#presciptionIdEngraving').val();
+    var presciptionIdEngraving = $('#presciptionIdEngraving').val();
     var data = {};
+
+    $('.error').text('');
+    function validateForm(data) {
+        var errors = [];
+        if (!presciptionIdEngraving) {
+            errors.push({ name: 'presciptionIdEngraving', message: "Prescription ID is required." });
+        }
+
+        $.each(data, function() {
+            if (!this.value) {
+                errors.push({ name: this.name, message: this.name + " is required." });
+            }
+        });
+
+        return errors;
+    }
 
     $.each(formData, function() {
         if (data[this.name]) {
@@ -543,10 +623,20 @@ function addLenseEngraving() {
             data[this.name] = this.value;
         }
     });
-    var csrf = $('meta[name="csrf-token"]').attr('content');
 
-    data.presciptionIdEngraving   = presciptionIdEngraving ;
-    data._token  = csrf;
+    data.presciptionIdEngraving = presciptionIdEngraving;
+    var csrf = $('meta[name="csrf-token"]').attr('content');
+    data._token = csrf;
+
+    // Validate form data
+    var errors = validateForm(formData);
+    if (errors.length > 0) {
+        // Show validation errors
+        errors.forEach(function(error) {
+            $('#' + error.name + 'Error').text(error.message);
+        });
+        return;
+    }
 
     $.ajax({
         type: 'post',
@@ -560,6 +650,7 @@ function addLenseEngraving() {
         }
     });
 }
+
 
 function addLenseFrame() {
     var formData = $('#addframform').serializeArray();
