@@ -50,7 +50,24 @@
     </div>
     <div class="sidebar_body">
         <form>
-            
+            <div class="form-group">
+                <label>Prescription Type</label>
+                <select class="form-control">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Display Title</label>
+                <select class="form-control">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <select class="form-control">
+                    <option></option>
+                </select>
+            </div>
         </form>
     </div>
 </div>

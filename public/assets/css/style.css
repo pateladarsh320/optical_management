@@ -80,3 +80,16 @@ em {
 .assign-product-box .header_prescription h4 { font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left; color: #545666; } 
 .opcity-50{opacity: .5;}
 
+/* sidebarpopup */
+.siderbar_popup { position: fixed; right: 0; background: #fff; padding: 0; box-shadow: 0px 10px 60px 0px #00000026; border-radius: 20px; top: 0; height: 100%;width: 100%; max-width: 368px; }
+.sidebar_header{border-bottom: 1px solid rgba(0, 0, 0, .1);padding: 20px;padding-right: 54px;position: relative;}
+.sidebar_header h3{font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left;color: #262839;}
+a.close_button { position: absolute; right: 20px; top: 20px; }
+.sidebar_body{padding: 25px 20px;}
+.form-group {margin-bottom: 20px;}
+.form-group label{font-family: Poppins; font-size: 14px; font-weight: 400; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: #545666;margin: 0 0 10px;;}
+.form-group .form-control{border: 1px solid rgba(0, 0, 0, 0.1);height: 46px;border-radius: 6px;color: #545666;}
+
+/* end sidebarpopup */
+
+
