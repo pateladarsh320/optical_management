@@ -11,7 +11,7 @@
                         </svg>                                
                     </div>
                     <div class="decr">
-                        <h3>Total Orders</h3>
+                        <h3> @lang('global.dashboard_card_torder')</h3>
                         <div class="data">15</div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                         </svg>                                                                
                     </div>
                     <div class="decr">
-                        <h3>Today's Orders</h3>
+                        <h3> @lang('global.dashboard_card_order')</h3>
                         <div class="data">01</div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         </svg>                                                                                               
                     </div>
                     <div class="decr">
-                        <h3>Total Product</h3>
+                        <h3> @lang('global.dashboard_card_product')</h3>
                         <div class="data">40</div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
         <table class="table mb-0">
             <thead>
                 <tr>
-                    <th>Product </th>
+                    <th> @lang('global.dashboard_table_product') </th>
                     <th>Type</th>
                     <th>Lens</th>
                     <th>Add-ons</th>
