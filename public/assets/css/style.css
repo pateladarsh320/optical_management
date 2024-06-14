@@ -58,9 +58,10 @@ em {
 .table thead tr th:last-child, .table tbody tr td:last-child{padding-right: 20px;}
 .table tbody tr:last-child td{border-bottom: none;padding-bottom: 0;}
 /* end  */
-.primary_btn{background: var(--primary-color);color: var(--white);font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;padding:8px 19px ;border-radius: 6px;}
+.btn-full{width: 100%; text-align: center;}
+.primary_btn{ border: 1px solid var(--primary-color); background: var(--primary-color);color: var(--white);font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em;padding:8px 19px ;border-radius: 6px;}
 .primary_btn svg{margin-right: 3px;}
-.primary_btn:hover{background: var(--primary-color-hover);color: var(--white);outline: none;}
+.primary_btn:hover{background: var(--primary-color-hover);border-color: var(--primary-color-hover); color: var(--white);outline: none;}
 .secondary_btn { background: rgba(37, 118, 240, 0.1);display: inline-block;border-radius: 4px;font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: var(--primary-color); padding: 5px 11px; }
 
 .header_heading{margin: 0 0 25px;}
@@ -73,7 +74,7 @@ em {
 .flow-box .form-control{border: 1px solid rgba(0, 0, 0, 0.1);height: 48px;border-radius: 6px;color: #545666;}
 .header_prescription { padding-bottom: 14px; border-bottom: 1px solid rgba(0, 0, 0, .2); padding:30px 30px 10px ;}
 .header_prescription h4 { font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left; color: #545666; } 
-.body_box {padding: 30px;}
+.body_box {padding: 25px 30px;}
 .no_added { text-align: center; font-family: Poppins; font-size: 15px; font-weight: 400; line-height: 22.5px; letter-spacing: -0.03em; COLOR: #545666; }
 
 .assign-product-box .header_prescription {  border-bottom: 1px solid rgba(0, 0, 0, .1);}
@@ -81,7 +82,7 @@ em {
 .opcity-50{opacity: .5;}
 
 /* sidebarpopup */
-.siderbar_popup { position: fixed; right: 0; background: #fff; padding: 0; box-shadow: 0px 10px 60px 0px #00000026; border-radius: 20px; top: 0; height: 100%;width: 100%; max-width: 368px; }
+.siderbar_popup { position: fixed; right: -500px; background: #fff; padding: 0; box-shadow: 0px 10px 60px 0px #00000026; border-radius: 20px; top: 0; height: 100%;width: 100%; max-width: 368px;z-index: 99;visibility: hidden;opacity: 0;transition: .5s ease; }
 .sidebar_header{border-bottom: 1px solid rgba(0, 0, 0, .1);padding: 20px;padding-right: 54px;position: relative;}
 .sidebar_header h3{font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left;color: #262839;}
 a.close_button { position: absolute; right: 20px; top: 20px; }
@@ -90,6 +91,27 @@ a.close_button { position: absolute; right: 20px; top: 20px; }
 .form-group label{font-family: Poppins; font-size: 14px; font-weight: 400; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: #545666;margin: 0 0 10px;;}
 .form-group .form-control{border: 1px solid rgba(0, 0, 0, 0.1);height: 46px;border-radius: 6px;color: #545666;}
 
+.open .siderbar_popup{visibility: visible;opacity: 1;right: 0;}
 /* end sidebarpopup */
+.prescription_accordion .accordion-item{background: #E8EBED;border-radius: 6px;padding: 0 20px;}
+.prescription_accordion .accordion-button{font-family: Poppins; font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.03em; text-align: left;color: #545666;background: transparent;border: none; padding: 16px 0 16px 30px; box-shadow:none;}
+.prescription_accordion .accordion-button:focus{outline: none; box-shadow: none;}
+.prescription_accordion .accordion-button::after{position: absolute; left: 0; top:50%; transform: translateY(-50%); background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMCAxN0wxNSAxMkwxMCA3VjE3WiIgZmlsbD0iIzU0NTY2NiIvPg0KPC9zdmc+DQo=");}
+.prescription_accordion .accordion-button:not(.collapsed)::after{position: absolute; left: 0; top:50%; transform: translateY(-50%); background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik03IDEwTDEyIDE1TDE3IDEwSDdaIiBmaWxsPSIjNTQ1NjY2Ii8+DQo8L3N2Zz4NCg==");}
+
+.prescription_accordion .accordion-button span{flex-shrink: 0; margin-left: auto; width: 20px; height: 20px;text-align: center;}
+.prescription_accordion .accordion-body { border-top: 1px solid rgba(0, 0, 0, .1);padding: 20px 0 20px; }
+
+.prescription_row {padding: 0 30px 20px;border-bottom: 1px solid rgba(0, 0, 0, .1);}
+.prescription_row label{ font-size: 15px; font-weight: 400; line-height: 22.5px; letter-spacing: -0.03em; text-align: left;color: #545666;}
+.prescription_row p{ font-size: 18px; font-weight: 600; line-height: 27px; letter-spacing: -0.03em; text-align: left;color: #2B2D3D;}
+
+
+.lensgroups{box-shadow: 0px 28px 40px -20px #12003814;border-radius:10px;background: #FFFFFF; margin-top: 30px;}
+.lensgroups .header_prescription{padding: 15px 30px 15px;}
+
+
+
+
 
 
