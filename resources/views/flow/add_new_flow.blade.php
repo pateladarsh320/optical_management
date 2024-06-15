@@ -341,7 +341,7 @@
     </div>
 </div>
 {{-- popup sidebar  --}}
-<div class="siderbar_popup" >
+<div class="siderbar_popup" > 
     {{-- prescription type --}}
     <div class="prescription_type" style="display: none">
         <div class="sidebar_header">
