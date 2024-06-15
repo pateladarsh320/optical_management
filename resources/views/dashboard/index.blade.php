@@ -57,11 +57,11 @@
             <table class="table mb-0">
                 <thead>
                     <tr>
-                        <th>Product </th>
-                        <th>Type</th>
-                        <th>Lens</th>
-                        <th>Add-ons</th>
-                        <th>Amount</th>
+                        <th>@lang('global.dashboard_table_product')</th>
+                        <th>@lang('global.dashboard_table_type')</th>
+                        <th>@lang('global.dashboard_table_lens')</th>
+                        <th>@lang('global.dashboard_table_addons')</th>
+                        <th>@lang('global.dashboard_table_amount')</th>
                         <th width="10%">Action</th>
                     </tr>
                 </thead>
