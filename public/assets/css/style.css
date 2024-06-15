@@ -62,7 +62,7 @@ em {
 .primary_btn{ border: 1px solid var(--primary-color); background: var(--primary-color);color: var(--white);font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em;padding:8px 19px ;border-radius: 6px;}
 .primary_btn svg{margin-right: 3px;}
 .primary_btn:hover{background: var(--primary-color-hover);border-color: var(--primary-color-hover); color: var(--white);outline: none;}
-.secondary_btn { background: rgba(37, 118, 240, 0.1);display: inline-block;border-radius: 4px;font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: var(--primary-color); padding: 5px 11px; }
+.secondary_btn { background: rgba(37, 118, 240, 0.1);display: inline-block;border-radius: 4px;font-family: Poppins; font-size: 14px; font-weight: 500; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: var(--primary-color); padding: 5px 11px;    min-width: 103px; }
 
 .header_heading{margin: 0 0 25px;}
 .header_heading h1{font-family: Poppins; font-size: 18px; font-weight: 600; line-height: 27px; text-align: left;color: #262839;margin: 0;}
@@ -90,7 +90,7 @@ a.close_button { position: absolute; right: 20px; top: 20px; }
 .form-group {margin-bottom: 20px;}
 .form-group label{font-family: Poppins; font-size: 14px; font-weight: 400; line-height: 21px; letter-spacing: -0.03em; text-align: left;color: #545666;margin: 0 0 10px;;}
 .form-group .form-control{border: 1px solid rgba(0, 0, 0, 0.1);height: 46px;border-radius: 6px;color: #545666;}
-
+.form-group textarea.form-control {min-height: 170px;}
 .open .siderbar_popup{visibility: visible;opacity: 1;right: 0;}
 /* end sidebarpopup */
 .prescription_accordion .accordion-item{background: #E8EBED;border-radius: 6px;padding: 0 20px;}
@@ -110,7 +110,9 @@ a.close_button { position: absolute; right: 20px; top: 20px; }
 .lensgroups{box-shadow: 0px 28px 40px -20px #12003814;border-radius:10px;background: #FFFFFF; margin-top: 30px;}
 .lensgroups .header_prescription{padding: 15px 30px 15px;}
 
-
+.browser_product { display: flex; flex-wrap: wrap; } 
+.browser_product input.form-control { width: calc(100% - 334px); border: 1px solid rgba(0, 0, 0, 0.1); height: 48px; } 
+.browser_product button.primary_btn { width: 324px; margin-left: 10px; height: 48px; }
 
 
 

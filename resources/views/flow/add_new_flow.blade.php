@@ -93,7 +93,7 @@
                                                     <div class="lensgroups mt-0">
                                                         <div class="header_prescription d-flex align-items-center justify-content-between">
                                                             <h4>Lens Name</h4> 
-                                                            <a href="javascript:void(0);" class="primary_btn" id="add_lensgroups"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <a href="javascript:void(0);" class="primary_btn" id="add_lensname"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M5.49989 1.5V10.5M1 6.00006H10" stroke="white" stroke-width="1.92857" stroke-linecap="round" stroke-linejoin="round"/>
                                                                 </svg> Add New</a>
                                                         </div>
@@ -211,7 +211,7 @@
                                                     <div class="lensgroups mt-0">
                                                         <div class="header_prescription d-flex align-items-center justify-content-between">
                                                             <h4>Lens Name</h4> 
-                                                            <a href="javascript:void(0);" class="primary_btn" id="add_lensgroups"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <a href="javascript:void(0);" class="primary_btn" id="add_lensname"><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M5.49989 1.5V10.5M1 6.00006H10" stroke="white" stroke-width="1.92857" stroke-linecap="round" stroke-linejoin="round"/>
                                                                 </svg> Add New</a>
                                                         </div>
@@ -303,7 +303,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -335,57 +334,138 @@
        <h4>Assign Product</h4>  
     </div>
     <div class="body_box">
-         
+         <div class="browser_product" style="visibility: hidden">
+            <input type="text" class="form-control" />
+            <button  class="primary_btn">Browse Product </button>
+         </div>
     </div>
 </div>
 {{-- popup sidebar  --}}
-<div class="siderbar_popup">
-    <div class="sidebar_header">
-         <h3>Add Prescription Type</h3>
-         <a href="javascript:void();" class="close_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> 
-        </a>
+<div class="siderbar_popup" >
+    {{-- prescription type --}}
+    <div class="prescription_type" style="display: none">
+        <div class="sidebar_header">
+            <h3>Add Prescription Type</h3>
+            <a href="javascript:void(0);" class="close_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M18 6L6 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M6 6L18 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg> 
+           </a>
+       </div>
+       <div class="sidebar_body">
+           <form>
+               <div class="form-group">
+                   <label>Prescription Type</label>
+                   <select class="form-control">
+                       <option></option>
+                   </select>
+               </div>
+               <div class="form-group">
+                   <label>Display Title</label>
+                    <input type="text" class="form-control" />
+               </div>
+               <div class="form-group">
+                   <label>Description</label>
+                   <textarea class="form-control"></textarea>
+               </div>
+               <input type="submit" class="primary_btn btn-full" value="Add Prescription Type" />
+           </form>
+       </div>
     </div>
-    <div class="sidebar_body">
-        <form>
-            <div class="form-group">
-                <label>Prescription Type</label>
-                <select class="form-control">
-                    <option></option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Display Title</label>
-                <select class="form-control">
-                    <option></option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <select class="form-control">
-                    <option></option>
-                </select>
-            </div>
-            <input type="submit" class="primary_btn btn-full" value="Add Prescription Type" />
-        </form>
+    {{-- end prescription type --}}
+    {{-- lens group --}}
+    <div class="lens_group" style="display: none">
+        <div class="sidebar_header">
+            <h3>Add Lens Group</h3>
+            <a href="javascript:void(0);" class="close_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M18 6L6 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M6 6L18 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg> 
+           </a>
+       </div>
+       <div class="sidebar_body">
+           <form> 
+               <div class="form-group">
+                   <label>Display Title</label>
+                    <input type="text" class="form-control" />
+               </div>
+               <div class="form-group">
+                   <label>Description</label>
+                   <textarea class="form-control"></textarea>
+               </div>
+               <input type="submit" class="primary_btn btn-full" value="Add Lens Group" />
+           </form>
+       </div>
     </div>
+    {{-- end lens group --}}
+    {{-- lens name --}}
+    <div class="lens_name" style="display: none">
+        <div class="sidebar_header">
+            <h3>Add Lens Name</h3>
+            <a href="javascript:void(0);" class="close_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M18 6L6 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M6 6L18 18" stroke="#545666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg> 
+           </a>
+       </div>
+       <div class="sidebar_body">
+           <form> 
+               <div class="form-group">
+                   <label>Display Title</label>
+                    <input type="text" class="form-control" />
+               </div>
+               <div class="form-group">
+                    <label>Lens Price</label>
+                    <input type="text" class="form-control" />
+                </div>
+               <div class="form-group">
+                   <label>Description</label>
+                   <textarea class="form-control"></textarea>
+               </div>
+               <input type="submit" class="primary_btn btn-full" value="Add Lens" />
+           </form>
+       </div>
+    </div>
+    {{-- end lens name --}}
 </div>
 @endsection
 
 @push('footer-script')
 <script>
     // sidebar
-    $('#add_prescription').on('click', function() {
-        $('body').addClass('open');
-    });
     $('.close_button').on('click', function() {
         $('body').removeClass('open');
+        $('.prescription_type').hide();
+        $('.lens_group').hide();
+        $('.lens_name').hide();
     });
 
     $('.siderbar_popup .primary_btn').on('click', function() {
+        $('.prescription_type').hide();
+        $('.lens_group').hide();
+        $('.lens_name').hide();
         $('body').removeClass('open');
+    });
+    $('#add_prescription').on('click', function() {
+        $('.prescription_type').show();
+        $('.lens_group').hide();
+        $('.lens_name').hide();
+        $('body').addClass('open');       
+    });
+    
+    $('#add_lensgroups').on('click', function() {
+        $('.prescription_type').hide();
+        $('.lens_group').show();
+        $('.lens_name').hide();
+        $('body').addClass('open');       
+    });
+    $('#add_lensname').on('click', function() {
+        $('.prescription_type').hide();
+        $('.lens_group').hide();
+        $('.lens_name').show();
+        $('body').addClass('open');    
+        $('.assign-product-box').removeClass('opcity-50');    
+        $('.browser_product').css("visibility", "visible");
     });
 </script>
 @endpush
